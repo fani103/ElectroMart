@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/icon.png">
+        <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC:wght@400..700&family=Black+Ops+One&display=swap');
+            body{
+    margin: 0;
+}
+
+.header{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.icon_area{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon_name{
+    font-weight: bolder;
+}
+
+.menu_area{
+    margin-right: 10px;
+}
+
+li{
+    padding:5px;
+    border-radius: 2px;
+    transition: transform 0.5s, background-color 0.5s; /* CORRECTED: background-color */
+}
+
+li:hover{ /* CORRECTED: li:hover pseudo-class */
+    transform: scale(1.1);
+    background-color: aliceblue;
+    border-bottom: 2px solid black; /* CORRECTED: Added solid */
+    cursor: pointer;
+}
+
+.main_content{
+    background-image: url("images/main.jpg");
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    font-family: "Black Ops One", system-ui; /* COMBINED with the original second rule */
+}
+
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
+
+.services_handing{
+    text-align: center;
+}
+
+.card1,.card2,.card3,.card_img1,.card_img2,.card_img3{
+    max-width: 300px;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.about_us{
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: aliceblue;
+    justify-content: center; /* ADDED for better layout */
+}
+
+.side_img{
+    max-width: 400px;
+}
+
+.side_text{
+    max-width: 500px;
+    text-align: justify;
+}
+
+.image,.img,.img1,.img2{
+    max-width: 400px;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.image:hover,.img:hover,.img1:hover,.img2:hover{ /* CORRECTED: .img2:hover pseudo-class */
+    transform: scale(1.1);
+} 
+
+.gallery_text{
+    position: top;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.footer{
+    text-align: center;
+    background-color: rgb(54, 28, 28);
+    color: white;
+    padding: 10px;
+    display: flex; /* Added display:flex to make justify-content work */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media only screen and (max-width:700px){
+    .gallery{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="icon_area">
+                    <img src="images/icon.png" class="icon">
+                    <span class="icon_area">Fun Travels</span>
+                </div>
+                <div class="menu_area">
+                    <ul>
+                        <li>Home</li>
+                        <li>Services</li>
+                        <li>About_Us</li>
+                        <li>Gallery</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+                <div class="main_content">
+                    <h2 class="main_heading">Travel with no Limits</h2>
+                    <p>Travel is the movement of people between different geographical</p>
+                </div>
+                <h1 class="services_handing">Our Services</h1>
+                <div class="services">
+                    <div class="card1">
+                        <img src="images/card1.png" class="card_img1">
+                        <p>Travel with all the freeness</p>
+                    </div>
+                    <div class="card2">
+                        <img src="images/card2.png" class="card_img2">
+                        <p>We will give 24/7 support, Always with you</p>
+                    </div>
+                    <div class="card3">
+                        <img src="images/card3.png" class="card_img3">
+                        <p>Travel with Affordable prices, Budget friendly</p>
+                    </div>
+                </div>
+                <div class="about_us">
+                    <img src="images/img1.png" class="img1"> <div class="side_text">
+                    <h1>About_Us</h1>
+                    <P>Travel is a transformative experience that allows people to explore new cultures, landscapes, and perspectives beyond their daily surroundings. It offers opportunities for relaxation, learning, and personal growth as travelers immerse themselves in unfamiliar environments, meet new people, and discover different ways of life. Whether it's a short weekend getaway or a long journey across continents, traveling broadens horizons, builds confidence, and creates lasting memories. Through travel, individuals gain a deeper appreciation for the world’s diversity and develop a greater understanding of themselves and others.
+</P>
+                </div>
+                </div>
+                <div class="gallery">
+                    <h2 class="gallery_text">Our Gallery</h2>
+                    <img src="images/image.png" class="image">
+                    <img src="images/img.png" class="img">
+                    <img src="images/img2.png" class="img2">
+                    <img src="images/img1.png" class="img1"> </div>
+            <div class="footer">
+                <div class="address">
+                    531 East Texas,<br>
+                    California South,<br>
+                    United States
+                </div>
+                <div class="contact">
+                    <p>funTravels@gamil.com</p>
+                    <p>+811113944440</p>
+                    <p>@2025</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
