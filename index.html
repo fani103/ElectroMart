@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 4 Assignment | JavaScript Fundamentals (Part 2)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>JavaScript Fundamentals — Week 4</h1>
+      <p>Functions · Arrays · Objects · DOM Manipulation · Events · Mini Project</p>
+      <div class="badge">Tasks 1–3 log to the console below · Tasks 4–6 are fully interactive</div>
+    </header>
+
+    <!-- ============ TASKS 1-3: Functions / Arrays / Objects ============ -->
+    <section>
+      <div class="controls">
+        <button class="btn primary" id="run-all-btn">▶ Run Tasks 1–3</button>
+        <button class="btn ghost" id="clear-btn">Clear Output</button>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Task 1 — Functions</h3>
+          <p>Declarations, parameters, return values, and arrow functions.</p>
+          <div class="card-footer">
+            <span>task1_functions.js</span>
+            <button class="run-btn" data-run="runTask1">Run ▸</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Task 2 — Arrays</h3>
+          <p>Create, access, add, remove, update, and iterate over arrays.</p>
+          <div class="card-footer">
+            <span>task2_arrays.js</span>
+            <button class="run-btn" data-run="runTask2">Run ▸</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Task 3 — Objects</h3>
+          <p>Create objects, and read/update/add/remove their properties.</p>
+          <div class="card-footer">
+            <span>task3_objects.js</span>
+            <button class="run-btn" data-run="runTask3">Run ▸</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="console-wrap">
+        <div class="console-titlebar">
+          <div class="dots">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          </div>
+          Output Console
+        </div>
+        <div id="console-output">
+          <div class="console-placeholder">Click "Run Tasks 1–3" or run one individually to see output here.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TASK 4: DOM Manipulation ============ -->
+    <section>
+      <h2 class="section-title">🧱 Task 4 — DOM Manipulation Playground</h2>
+      <p class="section-subtitle">Click the buttons below to see JavaScript change real elements on this page.</p>
+
+      <div class="playground-box" id="dom-playground">
+        <h4 id="dom-heading">Original Heading</h4>
+        <p id="dom-paragraph">This is the original paragraph text.</p>
+        <ul id="dom-list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+        </ul>
+      </div>
+
+      <div class="button-row">
+        <button class="btn" id="btn-change-text">Change Text Content</button>
+        <button class="btn" id="btn-change-html">Change HTML Content</button>
+        <button class="btn" id="btn-change-style">Change CSS Style</button>
+        <button class="btn" id="btn-add-element">Add List Item</button>
+        <button class="btn" id="btn-remove-element">Remove Last Item</button>
+        <button class="btn ghost" id="btn-reset-dom">Reset Playground</button>
+      </div>
+    </section>
+
+    <!-- ============ TASK 5: Events ============ -->
+    <section>
+      <h2 class="section-title">⚡ Task 5 — Events Playground</h2>
+      <p class="section-subtitle">Each box below demonstrates a different JavaScript event.</p>
+
+      <div class="event-grid">
+        <div class="event-demo">
+          <strong>Click Event</strong>
+          <p>
+            <button class="btn primary" id="click-counter-btn">Click Me</button>
+            &nbsp; Clicks: <span id="click-count">0</span>
+          </p>
+        </div>
+
+        <div class="event-demo">
+          <strong>Input Event (live preview)</strong>
+          <input type="text" class="text-input" id="live-input" placeholder="Type something...">
+          <p>Live preview: <span id="input-preview">(nothing typed yet)</span></p>
+        </div>
+
+        <div class="event-demo">
+          <strong>Submit Event</strong>
+          <form id="demo-form">
+            <input type="text" class="text-input" id="form-name-input" placeholder="Your name" required>
+            <button class="btn primary" type="submit" style="margin-top:8px;">Submit</button>
+          </form>
+          <p id="form-result"></p>
+        </div>
+
+        <div class="event-demo">
+          <strong>Mouse Events (hover)</strong>
+          <div id="hover-box" style="margin-top:8px;">Hover over me</div>
+        </div>
+
+        <div class="event-demo">
+          <strong>Keyboard Event (keydown)</strong>
+          <input type="text" class="text-input" id="key-input" placeholder="Click here and type">
+          <p id="key-display">Last key pressed: —</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TASK 6: Mini Project — To-Do List ============ -->
+    <section>
+      <h2 class="section-title">📝 Task 6 — Mini Project: To-Do List</h2>
+      <p class="section-subtitle">Combines functions, arrays, objects, DOM updates, and events in one working app.</p>
+
+      <div id="todo-app">
+        <form id="todo-form">
+          <input type="text" class="text-input" id="todo-input" placeholder="Add a new task..." required>
+          <select id="todo-priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+          </select>
+          <button class="btn primary" type="submit">Add Task</button>
+        </form>
+
+        <div class="todo-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <ul id="todo-list"></ul>
+        <p id="todo-stats"></p>
+      </div>
+    </section>
+
+    <footer>
+      Note: the To-Do list stores tasks in memory only (a JS array), so it resets on page refresh.
+    </footer>
+  </div>
+
+  <!-- utils.js MUST load first — Tasks 1-3 depend on log() / logHeading() -->
+  <script src="utils.js" defer></script>
+  <script src="task1_functions.js" defer></script>
+  <script src="task2_arrays.js" defer></script>
+  <script src="task3_objects.js" defer></script>
+  <script src="task4_dom.js" defer></script>
+  <script src="task5_events.js" defer></script>
+  <script src="task6_project.js" defer></script>
+
+  <!-- Page wiring for the Tasks 1-3 console controls only.
+       Tasks 4, 5, and 6 wire themselves up inside their own files. -->
+  <script defer>
+    window.addEventListener("DOMContentLoaded", () => {
+      const output = document.getElementById("console-output");
+
+      function clearPlaceholder() {
+        const placeholder = output.querySelector(".console-placeholder");
+        if (placeholder) placeholder.remove();
+      }
+
+      document.querySelectorAll(".run-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          clearPlaceholder();
+          const fnName = button.getAttribute("data-run");
+          if (typeof window[fnName] === "function") window[fnName]();
+        });
+      });
+
+      document.getElementById("run-all-btn").addEventListener("click", () => {
+        clearPlaceholder();
+        ["runTask1", "runTask2", "runTask3"].forEach((fnName) => {
+          if (typeof window[fnName] === "function") window[fnName]();
+        });
+      });
+
+      document.getElementById("clear-btn").addEventListener("click", () => {
+        clearConsolePanel();
+        output.innerHTML = '<div class="console-placeholder">Output cleared. Run a task to see new output here.</div>';
+      });
+    });
+  </script>
+</body>
+</html>
