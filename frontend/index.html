@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ElectroMart - Online Electronics Store</title>
+<meta name="description" content="ElectroMart - genuine electronics at honest prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/product.css">
+</head>
+<body data-page="home" data-nav="home">
+<div id="site-header"></div>
+<main>
+<section class="hero"><div class="container hero-inner"><div><h1>Smart electronics, smarter prices.</h1><p>Phones, laptops, audio, TVs and more - genuine products, secure payments and fast delivery. Ask our AI assistant to help you choose.</p>
+<div class="btn-row"><a class="btn btn-primary" href="products.html">Shop Now</a><a class="btn btn-outline" href="products.html">Explore Products</a></div></div>
+<div class="hero-art" aria-hidden="true"><div><i data-lucide="smartphone"></i></div><div><i data-lucide="laptop"></i></div><div><i data-lucide="headphones"></i></div><div><i data-lucide="monitor"></i></div><div><i data-lucide="watch"></i></div><div><i data-lucide="plug"></i></div></div></div></section>
+<section class="section container" id="categories"><h2>Shop by category</h2><p class="sub">Everything you need, in six aisles.</p><div class="cat-grid" id="cat-grid"></div></section>
+<section class="section container"><div class="sec-head"><div><h2>Featured products</h2></div><a href="products.html">View all →</a></div><div class="grid" id="featured-grid"></div></section>
+<section class="section container" id="offers"><div class="sec-head"><div><h2>Current offers</h2></div><a href="products.html?offers=true">All offers →</a></div><div class="grid" id="offers-grid"></div></section>
+<section class="section container"><div class="sec-head"><div><h2>Latest products</h2></div><a href="products.html">View all →</a></div><div class="grid" id="latest-grid"></div></section>
+<section class="section container"><h2>Why shop with us</h2><p class="sub">Built for a smooth, secure buying experience.</p><div class="benefits">
+<div class="benefit"><i data-lucide="shield-check"></i><div><h4>Secure payments</h4><p>Razorpay-verified online payments or Cash on Delivery.</p></div></div>
+<div class="benefit"><i data-lucide="truck"></i><div><h4>Order tracking</h4><p>Follow every order from confirmation to delivery.</p></div></div>
+<div class="benefit"><i data-lucide="badge-check"></i><div><h4>Honest pricing</h4><p>Prices and stock always come from our live catalogue.</p></div></div>
+<div class="benefit"><i data-lucide="sparkles"></i><div><h4>AI shopping help</h4><p>Ask the assistant to compare and recommend products.</p></div></div></div></section>
+<section class="section container" id="about"><h2>About ElectroMart</h2><p style="max-width:760px;color:#334155">ElectroMart is a full-stack college project that demonstrates a complete online electronics store: product catalogue, guest cart, secure checkout, order tracking, reviews, an admin dashboard with live analytics and an AI shopping assistant.</p></section>
+<section class="section container" id="reviews-section" style="display:none"><h2>What customers say</h2><div class="grid" id="reviews-list"></div></section>
+</main>
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/ai.js"></script>
+</body>
+</html>

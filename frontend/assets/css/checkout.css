@@ -1,0 +1,17 @@
+.page-title{font-size:1.6rem;color:var(--navy);padding:26px 0 14px}
+.two-col{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:start;padding-bottom:30px}@media(max-width:860px){.two-col{grid-template-columns:1fr}}
+.panel{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:16px}.panel h3{font-size:1.05rem;margin-bottom:14px;color:var(--navy)}
+.cart-item{display:grid;grid-template-columns:84px 1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);align-items:center}.cart-item:last-child{border:0}
+.cart-item img{width:84px;height:84px;object-fit:contain;background:#F1F5F9;border-radius:10px;padding:6px}.cart-item .nm{font-weight:600}
+.summary-row{display:flex;justify-content:space-between;padding:6px 0;font-size:.92rem}.summary-row.total{border-top:1px solid var(--border);margin-top:8px;padding-top:12px;font-size:1.1rem;font-weight:700;color:var(--navy)}
+.pay-opt{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px;cursor:pointer}.pay-opt:has(input:checked){border-color:var(--blue);background:#EFF6FF}.pay-opt input{width:auto;margin-top:5px}
+.status-pill{display:inline-block;padding:3px 11px;border-radius:99px;font-size:.78rem;font-weight:600;text-transform:capitalize}
+.s-pending{background:#FEF3C7;color:#92400E}.s-confirmed,.s-processing{background:#DBEAFE;color:#1E40AF}.s-shipped{background:#E0E7FF;color:#3730A3}.s-delivered,.s-paid{background:#DCFCE7;color:#166534}.s-cancelled,.s-failed{background:#FEE2E2;color:#991B1B}.s-cod_due,.s-refund_pending{background:#FFEDD5;color:#9A3412}.s-refunded{background:#F3E8FF;color:#6B21A8}
+.order-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:16px;box-shadow:var(--shadow)}
+.order-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.tracker{display:flex;margin:14px 0}.tracker .step{flex:1;text-align:center;font-size:.75rem;color:var(--muted);position:relative}
+.tracker .dot{width:22px;height:22px;border-radius:50%;background:#E2E8F0;margin:0 auto 4px;display:grid;place-items:center;color:#fff;font-size:.7rem;position:relative;z-index:1}
+.tracker .step::before{content:"";position:absolute;top:10px;left:-50%;width:100%;height:3px;background:#E2E8F0}.tracker .step:first-child::before{display:none}
+.tracker .step.done .dot,.tracker .step.done::before{background:var(--green)}.tracker .step.done{color:var(--text);font-weight:600}
+.confirm-hero{text-align:center;padding:30px 10px}.confirm-hero .tick{width:70px;height:70px;border-radius:50%;background:#DCFCE7;color:var(--green);display:grid;place-items:center;margin:0 auto 12px}.confirm-hero .tick .lucide{width:36px;height:36px}
+.star-input{display:flex;gap:4px}.star-input button{background:none;border:0;font-size:1.6rem;cursor:pointer;color:#CBD5E1}.star-input button.on{color:#F59E0B}

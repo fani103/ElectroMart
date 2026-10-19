@@ -1,0 +1,11 @@
+# Netlify: set "Base directory" = frontend, "Publish directory" = . (dot), no build command.
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"

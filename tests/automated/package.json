@@ -1,0 +1,1 @@
+{ "name": "electromart-tests", "private": true, "scripts": { "test:backend": "node backend-smoke.test.js", "test:ui": "node frontend-ui.test.js", "test": "node backend-smoke.test.js && node frontend-ui.test.js" }, "devDependencies": { "jsdom": "^26.0.0" } }

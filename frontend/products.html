@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products · ElectroMart</title>
+<meta name="description" content="ElectroMart - genuine electronics at honest prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/product.css">
+</head>
+<body data-page="catalog" data-nav="products">
+<div id="site-header"></div>
+<main><div class="container catalog">
+<aside class="filters"><h3>Filters</h3><form id="filter-form">
+<div class="field"><label for="f-search">Search</label><input id="f-search" name="search" placeholder="Product name" maxlength="80"></div>
+<div class="field"><label for="f-category">Category</label><select id="f-category" name="category"></select></div>
+<div class="form-row" style="gap:8px"><div class="field"><label for="f-min">Min ₹</label><input id="f-min" name="minPrice" type="number" min="0" inputmode="numeric"></div><div class="field"><label for="f-max">Max ₹</label><input id="f-max" name="maxPrice" type="number" min="0" inputmode="numeric"></div></div>
+<div class="field"><label style="display:flex;gap:8px;align-items:center"><input type="checkbox" name="instock" style="width:auto"> In stock only</label></div>
+<div class="field"><label style="display:flex;gap:8px;align-items:center"><input type="checkbox" name="offers" style="width:auto"> Offers only</label></div>
+<button class="btn btn-primary btn-block" type="submit">Apply filters</button><button class="btn btn-ghost btn-block" type="button" id="clear-filters" style="margin-top:8px">Clear filters</button></form></aside>
+<section><div class="offer-banner" id="offer-banner" style="display:none">🏷️ Showing products with a genuine discount</div>
+<div class="toolbar"><span id="result-count" style="color:var(--muted)"></span><label style="display:flex;gap:8px;align-items:center;margin:0">Sort by <select id="sort"><option value="newest">Newest</option><option value="price_asc">Price: low to high</option><option value="price_desc">Price: high to low</option><option value="rating">Rating</option><option value="discount">Biggest discount</option></select></label></div>
+<div class="grid" id="product-grid"></div><div class="pager" id="pager"></div></section></div></main>
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/ai.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard · ElectroMart</title>
+<meta name="description" content="ElectroMart - genuine electronics at honest prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/admin.css">
+<link rel="stylesheet" href="assets/css/checkout.css">
+<link rel="stylesheet" href="assets/css/product.css">
+</head>
+<body data-page="admin" data-nav="">
+<div class="admin-top"><div class="container"><a class="logo" href="index.html"><span class="mark"><i data-lucide="shield"></i></span>ElectroMart Admin</a>
+<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span id="admin-email" style="font-size:.85rem;color:var(--muted)"></span><a class="btn btn-ghost btn-sm" href="index.html">View store</a><button class="btn btn-ghost btn-sm" id="logout-admin">Sign out</button></div></div></div>
+<main class="container" style="padding:20px 0 50px"><div id="admin-gate"><div class="empty"><span class="spinner"></span><p style="margin-top:10px">Checking admin access…</p></div></div>
+<div id="admin-app" class="hidden">
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div class="tabs" id="admin-tabs" style="margin:0"><button class="tab active" data-tab="overview">Overview</button><button class="tab" data-tab="products">Products</button><button class="tab" data-tab="orders">Orders</button><button class="tab" data-tab="reviews">Reviews</button><button class="tab" data-tab="emails">Emails</button></div>
+<div style="display:flex;gap:12px;align-items:center"><span class="live" id="live"><i></i> Connecting…</span><span id="last-updated" style="font-size:.8rem;color:var(--muted)"></span><button class="btn btn-outline btn-sm" id="refresh-btn"><i data-lucide="refresh-cw"></i> Refresh</button></div></div>
+<div id="conn-err" class="alert alert-error" style="display:none;margin-top:12px"></div>
+<section class="tab-panel" id="tab-overview" style="margin-top:18px"><div class="stat-grid" id="stats"></div>
+<div class="grid-2"><div class="panel"><h3>Collected revenue - last 30 days</h3><div class="bars" id="trend"></div></div><div class="panel"><h3>Best-selling products</h3><div id="best"></div></div></div>
+<div class="grid-2"><div class="panel"><h3>Order status</h3><div id="st-order"></div></div><div class="panel"><h3>Payment status</h3><div id="st-pay"></div></div></div>
+<p style="font-size:.8rem;color:var(--muted)"><b>How numbers are calculated:</b> Collected revenue = orders with payment status "paid" (Razorpay verified on the server, or COD cash recorded). Cancelled, refund-pending and refunded orders are excluded. COD outstanding = COD orders still due. Pending orders = status pending or confirmed.</p></section>
+<section class="tab-panel hidden" id="tab-products" style="margin-top:18px"><div style="margin-bottom:12px"><button class="btn btn-primary" id="add-product"><i data-lucide="plus"></i> Add product</button></div><div class="table-wrap"><table class="data"><thead><tr><th></th><th>Product</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th></tr></thead><tbody id="products-body"></tbody></table></div></section>
+<section class="tab-panel hidden" id="tab-orders" style="margin-top:18px"><div style="margin-bottom:12px;max-width:240px"><select id="order-filter" aria-label="Filter orders"><option value="">All orders</option><option>pending</option><option>confirmed</option><option>processing</option><option>shipped</option><option>delivered</option><option>cancelled</option></select></div><div class="table-wrap"><table class="data"><thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Payment</th><th>Status</th><th>Actions</th></tr></thead><tbody id="orders-body"></tbody></table></div></section>
+<section class="tab-panel hidden" id="tab-reviews" style="margin-top:18px"><div class="table-wrap"><table class="data"><thead><tr><th>Product</th><th>Rating</th><th>Comment</th><th>Customer</th><th>Status</th><th>Moderate</th></tr></thead><tbody id="reviews-body"></tbody></table></div></section>
+<section class="tab-panel hidden" id="tab-emails" style="margin-top:18px"><p style="margin-bottom:10px;color:var(--muted)">Emails that are pending or failed. Orders are never lost when an email fails.</p><button class="btn btn-primary btn-sm" id="retry-emails" style="margin-bottom:12px">Retry failed emails</button><div class="table-wrap"><table class="data"><thead><tr><th>Order</th><th>Type</th><th>Status</th><th>Attempts</th><th>Last error</th></tr></thead><tbody id="emails-body"></tbody></table></div></section>
+</div></main>
+<div class="modal" id="product-modal"><div class="modal-card"><h3 id="pm-title">Add product</h3><div id="pm-alert" class="alert" style="display:none;margin-top:10px"></div>
+<form id="product-form" style="margin-top:12px"><input type="hidden" name="product_id">
+<div class="field"><label>Name</label><input name="name" required maxlength="200"></div>
+<div class="form-row"><div class="field"><label>Category</label><select name="category" id="f-cat"></select></div><div class="field"><label>Stock quantity</label><input name="stock_quantity" type="number" min="0" step="1" required></div></div>
+<div class="form-row"><div class="field"><label>Selling price (₹)</label><input name="price" type="number" min="1" step="0.01" required></div><div class="field"><label>Original price (₹, optional)</label><input name="original_price" type="number" min="1" step="0.01"></div></div>
+<div class="field"><label>Description</label><textarea name="description" rows="3"></textarea></div>
+<div class="field"><label>Specifications (one per line: Name: Value)</label><textarea name="specs" rows="4" placeholder="RAM: 8 GB&#10;Storage: 128 GB"></textarea></div>
+<div class="field"><label>Product image (JPG/PNG/WebP, max 5 MB)</label><input type="file" id="pm-file" accept="image/jpeg,image/png,image/webp"><span id="pm-upload-state" style="font-size:.8rem"></span><input type="hidden" name="image_url"><div id="pm-preview" style="width:90px;margin-top:8px"></div></div>
+<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" class="btn btn-ghost" id="pm-cancel">Cancel</button><button class="btn btn-primary" id="pm-save">Save product</button></div></form></div></div>
+<div class="modal" id="order-modal"><div class="modal-card" id="order-detail"></div></div>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/orders.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
